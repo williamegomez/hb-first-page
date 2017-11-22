@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Viga');
+
+$fontname: 'Viga';
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+	font-family: 'Viga';
+	font-size: 15px;
+}
+
+.container {
+    width: 100%;
+    margin: 80px auto;
+    max-width: 1024px;
+}
+
+.navbar{
+    width: 100%;
+    max-width: 1024px;
+    background-color: #4D71B4;
+    position: fixed;
+		top: 0;
+		display: flex;
+		border-radius: 0 0 5px 5px;
+		height: 50px;
+
+		ul {
+			display: flex;
+			list-style-type: none;
+			
+			li {
+				line-height: 30px;
+				padding: 10px;
+
+				img{
+					height: 30px;
+				}
+
+				a{
+						color: white;
+						text-decoration: none;
+				}
+
+				&:hover {
+					background-color: rgb(54, 85, 141);
+				}
+			}
+			
+		}
+}

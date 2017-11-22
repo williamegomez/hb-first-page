@@ -1,0 +1,29 @@
+{
+  "name": "hb-first-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run lint && node-sass src/css/index.scss public/index.css --build --output-style compressed",
+    "lint": "stylelint 'src/styles/**/*.scss' --config .stylelintrc --syntax scss",
+    "start": "npm run build -- -w --source-map true",
+    "precommit": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamegomez/hb-first-page.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/williamegomez/hb-first-page/issues"
+  },
+  "homepage": "https://github.com/williamegomez/hb-first-page#readme",
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "node-sass": "^4.7.2",
+    "stylelint": "^8.2.0",
+    "stylelint-config-recommended": "^1.0.0",
+    "stylelint-scss": "^2.1.0"
+  }
+}
