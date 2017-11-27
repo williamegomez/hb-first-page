@@ -1,6 +1,6 @@
 var flaghover = false;
 var xi;
-
+var menuopen = false;
 
 function myFunction() {
     var des = event.clientX - xi;     // Get the horizontal coordinate
@@ -26,3 +26,14 @@ document.body.addEventListener('click', function (event) {
         document.body.removeEventListener('mousemove', myFunction);
     }
 });
+
+function ExpandBar() {
+    if (menuopen==false){
+        document.getElementsByClassName("menu")[0].style.display = "block";
+        menuopen=true;
+    }
+    else{
+        document.getElementsByClassName("menu")[0].style.display = "none";
+        menuopen=false;
+    }
+}
