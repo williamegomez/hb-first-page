@@ -1,31 +1,31 @@
 var flaghover = false;
-var xi;
 var menuopen = false;
+var xinicial_mobilec;
+
+var containermobile =document.querySelector('.container_services');
 
 function myFunction() {
-    var des = event.clientX - xi;     // Get the horizontal coordinate
-    console.log("Desplazamiento",des);
-    var elements = document.querySelectorAll('.card-service');
-    for(let i=0;i<elements.length;i++){
-        console.log(elements[i].getBoundingClientRect().left);
-        elements[i].style.transform = "translateX("+des+"px)";
-        console.log(elements[i].getBoundingClientRect().left);
-    }
+    console.log("pos",event.clientX);
+    movement = event.clientX - xinicial_mobilec;
+    console.log("Desplazamiento",movement);
+    containermobile.style.transform = "translateX("+movement+"px)";
 }
 
+containermobile.addEventListener("mousedown", function(){
+    flaghover=true;
+    xinicial_mobilec = event.clientX;
+    console.log("xinicial_mobilec",xinicial_mobilec);
+}, true);
 
-document.body.addEventListener('click', function (event) {
-    if (document.querySelector('.container_services').contains(event.target)&& flaghover==false){
-        xi = event.clientX;     // Get the horizontal coordinate  
-        flaghover = true;
-        document.body.addEventListener('mousemove', myFunction);
-
-    } else {
-        flaghover = false;
-
-        document.body.removeEventListener('mousemove', myFunction);
+containermobile.addEventListener("mousemove", function(){
+    if(flaghover==true){
+        myFunction(event);
     }
-});
+}, false);
+
+containermobile.addEventListener("mouseup", function(){
+    flaghover=false;
+}, false);
 
 function ExpandBar() {
     if (menuopen==false){
